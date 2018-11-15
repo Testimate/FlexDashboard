@@ -1,0 +1,85 @@
+---
+title: "Yuqing's mtcars"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: scroll
+---
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+```
+
+[comment]: <> (https://www.kaggle.com/philippsp/interactive-dashboards-in-r/report)
+[comment]: <> (https://www.quackit.com/css/css_color_codes.cfm)
+
+
+
+
+
+Row
+-----------------------------------------------------------------------
+
+
+### Total number of cars
+
+```{r}
+No.cars <- mtcars %>% count
+valueBox(No.cars, icon = "glyphicon-phone")
+```
+
+### The Fastest: Ford Pantora L
+
+```{r}
+aaa <- "s";
+smallest.qsec <- mtcars %>%
+  select(qsec) %>% min
+valueBox(paste(smallest.qsec, aaa), icon = "glyphicon-fire", color = "#800000")
+```
+
+
+### The Most Powerful: Maserati Bora
+
+```{r}
+bbb <- "hp";
+largest.hp <- mtcars %>%
+  select(hp) %>% max
+valueBox(paste(largest.hp, bbb), icon = "glyphicon-tower", color = "#FFD700")
+```
+
+### The Economist: Toyota Corolla
+
+```{r}
+ccc <- "mpg"
+largest.mpg <- mtcars %>%
+  select(mpg) %>% max
+valueBox(paste(largest.mpg, ccc), icon = "glyphicon-pushpin", color = "#228B22")
+```
+
+
+Column {data-width=250}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+
+```
+
+Column {data-width=750}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+
