@@ -2,7 +2,7 @@
 title: "Yuqing's mtcars application on flexdashboard"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: rows
+    #orientation: rows
     vertical_layout: scroll
 ---
 
@@ -16,7 +16,14 @@ library(tidyverse)
 [comment]: <> (https://www.quackit.com/css/css_color_codes.cfm)
 
 
+```{r}
+View(mtcars)
+```
 
+
+
+Layout 1 {data-orientation=rows data-icon="fa-bar-chart"}
+=====================================
 
 
 Row
@@ -83,3 +90,33 @@ Column {data-width=750}
 
 ```
 
+
+Layout 2 {data-icon="fa-area-chart"}
+=====================================  
+
+Column {data-width=450}
+-------------------------------------
+
+
+### Rating
+
+```{r}
+rate <- 85
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(80, 100), warning = c(40, 79), danger = c(0, 39)
+))
+```
+
+
+Column {data-width=450}
+-------------------------------------
+
+
+### Score
+
+```{r}
+score <- 3
+gauge(score, min = 0, max = 10, gaugeSectors(
+  success = c(8, 10), warning = c(4, 7), danger = c(0, 3)
+))
+```
