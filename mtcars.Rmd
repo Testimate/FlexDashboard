@@ -1,5 +1,5 @@
 ---
-title: "Yuqing's mtcars"
+title: "Yuqing's mtcars application on flexdashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: rows
@@ -23,14 +23,14 @@ Row
 -----------------------------------------------------------------------
 
 
-### Total number of cars
+### _Total number of cars_
 
 ```{r}
 No.cars <- mtcars %>% count
 valueBox(No.cars, icon = "glyphicon-phone")
 ```
 
-### The Fastest: Ford Pantora L
+### _The Fastest: Ford Pantora L_
 
 ```{r}
 aaa <- "s";
@@ -40,7 +40,7 @@ valueBox(paste(smallest.qsec, aaa), icon = "glyphicon-fire", color = "#800000")
 ```
 
 
-### The Most Powerful: Maserati Bora
+### _The Most Powerful: Maserati Bora_
 
 ```{r}
 bbb <- "hp";
@@ -49,7 +49,7 @@ largest.hp <- mtcars %>%
 valueBox(paste(largest.hp, bbb), icon = "glyphicon-tower", color = "#FFD700")
 ```
 
-### The Economist: Toyota Corolla
+### _The Economist: Toyota Corolla_
 
 ```{r}
 ccc <- "mpg"
